@@ -1,0 +1,20 @@
+body {
+    background-color: #222222;
+    height: 500px;
+}
+.font {
+    color: #FFDD00;
+    font-size:50px;
+    text-transform:uppercase;
+    font-weight:bold;
+    text-align: center;
+}
+button{
+    margin: 5px 20px 5px 10px;
+}
+.empty{
+    padding-bottom: 15%;
+}
+.drop{
+    padding-bottom:40px;
+}

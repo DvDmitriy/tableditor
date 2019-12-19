@@ -1,0 +1,15 @@
+table{
+    background-color: white;
+    border: 3px solid black;
+}
+td{
+    text-align: center;
+    border: 1px solid black;
+}
+.unusualCell{
+    text-align: left;
+}
+input{
+    width: 100%;
+
+}
