@@ -199,8 +199,32 @@ class SumValues extends Component{
     componentDidMount = () =>{
         let {range, id} = this.props;
         range = range.split(':');
-        this.sumValues(range, id);
+        let sumValue = this.sumValues(range, id);
+        console.log("Sum = " + sumValue);
+        this.setState({
+              id: id,
+              value: sumValue
+
+        }, ()=>this.props.setSumValue(sumValue, id));
+
     };
+    // com
+    // lll
+      componentDidUpdate(prevProps, prevState, snapshot) {
+
+          let {range, id} = this.props;
+          range = range.split(':');
+          let sumValue = this.sumValues(range, id);
+          if (id === prevState.id && sumValue !== prevState.value) {
+              console.log("Sum = " + sumValue);
+              this.setState({
+                  id: id,
+                  value: sumValue
+
+              }, () => this.props.setSumValue(sumValue, id));
+          }
+      }
+
     render(){
         const {id, type} = this.props;
         let {range, value, isLoadded} = this.props;
@@ -213,16 +237,16 @@ class SumValues extends Component{
             //console.log("Value = " + value);
             //range = range.split(':');
             //componentDidMount()
-            let {range, id} = this.props;
-            range = range.split(':');
-            let sumValue = this.sumValues(range, id);
-            console.log("ID = " + id);
-            console.log("Sum = " + sumValue);
-            //this.setState({
-            //     id: id,
-            //     value: sumValue
+            //let {range, id} = this.props;
+            //range = range.split(':');
+            //let sumValue = this.sumValues(range, id);
+            //console.log("ID = " + id);
+            //console.log("Sum = " + sumValue);
+           // this.setState({
+           //      id: id,
+           //      value: sumValue
 
-           // });
+         //  });
             //this.props.setSumValue(sumValue, id);
         }
         else

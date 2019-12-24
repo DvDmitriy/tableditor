@@ -467,7 +467,7 @@ export default {
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
-                "value": 3
+                "value": 5
             },
             {
                 "id": 1372,
