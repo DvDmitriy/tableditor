@@ -7,7 +7,8 @@ export default class CustomTD extends Component{
         id: '',
         value: '',
         input: false,
-        isLoadded: false
+        isLoadded: false,
+        update: false
     };
    // constructor(props) {
    //     super(props);
@@ -17,8 +18,9 @@ export default class CustomTD extends Component{
         this.setState({
             id: id,
             value: newValue,
-            isLoadded: true
-        }, ()=>console.log("NewValue = " + this.state.value + " thisId = " + this.state.id));
+            update: true
+
+        }, ()=>console.log("NewValue = " + this.state.value + " thisId = " + this.state.id + " update = " + this.state.update));
     };
 
     changeStateInput = (input) =>{
@@ -34,7 +36,8 @@ export default class CustomTD extends Component{
     setSumValue =(sumValue, id)=>{
         this.setState({
             id: id,
-            value: sumValue
+            value: sumValue,
+            update: false
         }, ()=>console.log("sumValue = " + this.state.value));
     };
     getCellValue = (id) => {
@@ -54,6 +57,7 @@ export default class CustomTD extends Component{
         // console.log("CellValue = " + cellValue);
         return cellValue;
     };
+
     render() {
         const {id, type, color, cellState, action, range} = this.props;
         let {value, counter} = this.props;
@@ -96,6 +100,7 @@ export default class CustomTD extends Component{
                           type={type}
                           value={value || this.state.value}
                           isLoadded={this.state.isLoadded}
+                          update={this.state.update}
                           range={range}
                           //ref={this.myRef}
                           getCellValue={this.getCellValue}
@@ -227,15 +232,31 @@ class SumValues extends Component{
       //          }, () => this.props.setSumValue(sumValue, id));
       //     }
       // }
+    updateSumValue = () =>{
+        let {range, id} = this.props;
+        range = range.split(':');
+        console.log("sumValueId = " + id);
+        let sumValue = this.sumValues(range);
+        console.log("Sum = " + sumValue);
+        this.setState({
+            id: id,
+            value: sumValue,
 
+        }, ()=>this.props.setSumValue(sumValue, id));
+    };
     render(){
         const {id, type} = this.props;
-        let {range, value, isLoadded} = this.props;
+        let {range, value, isLoadded, update} = this.props;
         if (value === '') {
             value = 0;
         }
         if(!isLoadded) {
             this.props.checkIsLoadded()
+        }
+        if(update)
+        {
+            console.log(update);
+            this.updateSumValue();
         }
             //console.log("cellId = " + id);
             //console.log("type = " + type);
