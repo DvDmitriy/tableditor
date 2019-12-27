@@ -60,7 +60,7 @@ export default class Table extends Component{
                                                    color={cell.color}
                                                    state={cell.cellState}
                                                    action={cell.action}
-                                                   range={cell.range}
+                                                   range={cell.range || null}
                                                    value={cell.value}
                                                    counter={this.state.counter}
                                                    changeCounter={this.changeCounter}

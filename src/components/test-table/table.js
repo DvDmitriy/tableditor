@@ -1,3 +1,5 @@
+import React from "react";
+
 export default {
 
     "header":[
@@ -118,6 +120,7 @@ export default {
             {
                 "id": 1311,
                 "cellState": "able",
+                "range": "1321:1331:1371:13121",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -126,6 +129,7 @@ export default {
             {
                 "id": 1312,
                 "cellState": "able",
+                "range": "1322:1332:1372:13122",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -134,6 +138,7 @@ export default {
             {
                 "id": 1313,
                 "cellState": "able",
+                "range": "1323:1333:1373:13123",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -142,6 +147,7 @@ export default {
             {
                 "id": 1314,
                 "cellState": "able",
+                "range": "1324:1334:1374:13124",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -150,6 +156,7 @@ export default {
             {
                 "id": 1315,
                 "cellState": "able",
+                "range": "1325:1335:1375:13125",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -158,6 +165,7 @@ export default {
             {
                 "id": 1316,
                 "cellState": "able",
+                "range": "1326:1336:1376:13126",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -234,6 +242,7 @@ export default {
             {
                 "id": 1331,
                 "cellState": "able",
+                "range": "1341:1351:1361",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -242,6 +251,7 @@ export default {
             {
                 "id": 1332,
                 "cellState": "able",
+                "range": "1342:1352:1362",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -250,6 +260,7 @@ export default {
             {
                 "id": 1333,
                 "cellState": "able",
+                "range": "1343:1353:1363",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -258,6 +269,7 @@ export default {
             {
                 "id": 1334,
                 "cellState": "able",
+                "range": "1344:1354:1364",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -266,6 +278,7 @@ export default {
             {
                 "id": 1335,
                 "cellState": "able",
+                "range": "1345:1355:1365",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -274,6 +287,7 @@ export default {
             {
                 "id": 1336,
                 "cellState": "able",
+                "range": "1346:1356:1366",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -464,6 +478,7 @@ export default {
             {
                 "id": 1371,
                 "cellState": "able",
+                "range": "1381:1391:13101:13111:13121",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -472,6 +487,7 @@ export default {
             {
                 "id": 1372,
                 "cellState": "able",
+                "range": "1382:1392:13102:13112:13122",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -480,6 +496,7 @@ export default {
             {
                 "id": 1373,
                 "cellState": "able",
+                "range": "1383:1393:13103:13113:13123",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -488,6 +505,7 @@ export default {
             {
                 "id": 1374,
                 "cellState": "able",
+                "range": "1384:1394:13104:13114:13124",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -496,6 +514,7 @@ export default {
             {
                 "id": 1375,
                 "cellState": "able",
+                "range": "1385:1395:13105:13115:13125",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -504,6 +523,7 @@ export default {
             {
                 "id": 1376,
                 "cellState": "able",
+                "range": "1386:1396:13106:13116:13126",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",
@@ -512,6 +532,7 @@ export default {
             {
                 "id": 1377,
                 "cellState": "able",
+                "range": "1387:1397:13107:13117:13127",
                 "type": "number",
                 "color": "#FFFF9F",
                 "action": "sum",

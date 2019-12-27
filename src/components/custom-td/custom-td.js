@@ -16,7 +16,8 @@ export default class CustomTD extends Component{
     setValue =(newValue, id)=>{
         this.setState({
             id: id,
-            value: newValue
+            value: newValue,
+            isLoadded: true
         }, ()=>console.log("NewValue = " + this.state.value + " thisId = " + this.state.id));
     };
 
@@ -42,23 +43,24 @@ export default class CustomTD extends Component{
        //     {()=>console.log("Yes");}
        // });
         let content = document.getElementById(id);
+       // console.log("id = " + id + content);
         //let cellValue = this.myRef.current;
         let cellValue = content.firstChild.nodeValue;
-        if(cellValue === "")
-        {cellValue = 0}
-        console.log("rangeIds = " + id);
-        //console.log("content = " + content);
-        console.log("CellValue = " + cellValue);
+         if(cellValue === "")
+            {cellValue = 0;
+                console.log("id = " + id + " value = " + cellValue);}
+        // console.log("rangeIds = " + id);
+        // //console.log("content = " + content);
+        // console.log("CellValue = " + cellValue);
         return cellValue;
     };
     render() {
-        const {id, type, color, cellState, action} = this.props;
+        const {id, type, color, cellState, action, range} = this.props;
         let {value, counter} = this.props;
-
+        console.log(range);
         return (
             <td
                 id={id}
-                ref={this.myRef}
                 type={type}
                 style={{backgroundColor: color}}
                 state={cellState}
@@ -69,7 +71,7 @@ export default class CustomTD extends Component{
                         input:true,
                     }, () => this.props.changeCounter(++counter))
                    : null}
-                ><>{this.state.input
+                ><>{this.state.input && range === null
                            ?
                            (
                               <InputValue
@@ -86,7 +88,7 @@ export default class CustomTD extends Component{
                            : this.state.value ||
                               value}</>
 
-                <>{action === "sum" //&& this.state.isLoadded
+                <>{action === "sum" && range//&& this.state.isLoadded
                     ?
                     (
                        <SumValues
@@ -94,7 +96,7 @@ export default class CustomTD extends Component{
                           type={type}
                           value={value || this.state.value}
                           isLoadded={this.state.isLoadded}
-                          range={"1321:1331:1371:13121"}
+                          range={range}
                           //ref={this.myRef}
                           getCellValue={this.getCellValue}
                           checkIsLoadded={this.checkIsLoadded}
@@ -170,7 +172,7 @@ class SumValues extends Component{
         value: ''
     };
 
-    sumValues = (range, id) => {
+    sumValues = (range) => {
         let sumValue = 0;
         range.map((id) => {
             sumValue +=
@@ -199,31 +201,32 @@ class SumValues extends Component{
     componentDidMount = () =>{
         let {range, id} = this.props;
         range = range.split(':');
-        let sumValue = this.sumValues(range, id);
+        console.log("sumValueId = " + id);
+        let sumValue = this.sumValues(range);
         console.log("Sum = " + sumValue);
         this.setState({
               id: id,
               value: sumValue
-
         }, ()=>this.props.setSumValue(sumValue, id));
 
     };
     // com
     // lll
-      componentDidUpdate(prevProps, prevState, snapshot) {
-
-          let {range, id} = this.props;
-          range = range.split(':');
-          let sumValue = this.sumValues(range, id);
-          if (id === prevState.id && sumValue !== prevState.value) {
-              console.log("Sum = " + sumValue);
-              this.setState({
-                  id: id,
-                  value: sumValue
-
-              }, () => this.props.setSumValue(sumValue, id));
-          }
-      }
+        // getDerivedProps
+      //  componentDidUpdate(prevProps, prevState, snapshot) {
+      //
+      //      let {range, id} = this.props;
+      //      range = range.split(':');
+      //      let sumValue = this.sumValues(range, id);
+      //      if (id === prevState.id &&  this.state.value=== prevState.value) {
+      //          console.log("Sum = " + sumValue);
+      //          this.setState({
+      //              id: id,
+      //              value: sumValue
+      //
+      //          }, () => this.props.setSumValue(sumValue, id));
+      //     }
+      // }
 
     render(){
         const {id, type} = this.props;
@@ -231,7 +234,9 @@ class SumValues extends Component{
         if (value === '') {
             value = 0;
         }
-        if(isLoadded) {
+        if(!isLoadded) {
+            this.props.checkIsLoadded()
+        }
             //console.log("cellId = " + id);
             //console.log("type = " + type);
             //console.log("Value = " + value);
@@ -248,9 +253,8 @@ class SumValues extends Component{
 
          //  });
             //this.props.setSumValue(sumValue, id);
-        }
-        else
-        {this.props.checkIsLoadded()}
+
+
         //console.log("Activate class!!!");
         return (
            <div></div>

@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/test-table/test-table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="59">
+              <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -31,20 +31,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/custom-td/custom-td.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="237" column="27" selection-start-line="237" selection-start-column="27" selection-end-line="237" selection-end-column="27" />
+            <state relative-caret-position="1936">
+              <caret line="246" column="26" lean-forward="true" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <marker date="1577443940005" expanded="true" signature="6518:7060" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/src/mugger.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="84">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -52,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/test-table/table.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9849">
-              <caret line="469" column="26" selection-start-line="469" selection-start-column="26" selection-end-line="469" selection-end-column="26" />
+            <state relative-caret-position="-88">
+              <caret line="516" column="40" lean-forward="true" selection-start-line="516" selection-start-column="40" selection-end-line="516" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -174,7 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,6 +230,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,12 +353,15 @@
       <workItem from="1576774443301" duration="3423000" />
       <workItem from="1576839366171" duration="648000" />
       <workItem from="1576861029065" duration="1968000" />
-      <workItem from="1577186466368" duration="3344000" />
+      <workItem from="1577186466368" duration="4144000" />
+      <workItem from="1577262854159" duration="7564000" />
+      <workItem from="1577371494036" duration="1751000" />
+      <workItem from="1577437383194" duration="1624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198541000" />
+    <option name="totallyTimeSpent" value="210280000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,20 +376,20 @@
     <frame x="-9" y="-9" width="1384" height="738" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.62056077" visible="true" weight="0.15706806" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6135266" visible="true" weight="0.15706806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.37943926" side_tool="true" visible="true" weight="0.15706806" />
+      <window_info id="npm" order="2" sideWeight="0.38647342" side_tool="true" visible="true" weight="0.15706806" />
       <window_info id="Favorites" order="3" sideWeight="0.5008726" side_tool="true" weight="0.19820493" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4906507" visible="true" weight="0.066317625" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48840687" visible="true" weight="0.27748692" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32984293" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5093493" side_tool="true" visible="true" weight="0.066317625" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5115931" side_tool="true" visible="true" weight="0.27748692" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32984293" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -423,13 +427,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mugger.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -543,16 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/test-table/test-table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -560,10 +547,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/test-table/table.js">
+    <entry file="file://$PROJECT_DIR$/src/mugger.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9849">
-          <caret line="469" column="26" selection-start-line="469" selection-start-column="26" selection-end-line="469" selection-end-column="26" />
+        <state relative-caret-position="84">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -608,12 +595,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/custom-td/custom-td.js">
+    <entry file="file://$PROJECT_DIR$/src/components/test-table/table.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="237" column="27" selection-start-line="237" selection-start-column="27" selection-end-line="237" selection-end-column="27" />
+        <state relative-caret-position="-88">
+          <caret line="516" column="40" lean-forward="true" selection-start-line="516" selection-start-column="40" selection-end-line="516" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/test-table/test-table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="62" column="77" selection-start-line="62" selection-start-column="77" selection-end-line="62" selection-end-column="77" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/custom-td/custom-td.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1936">
+          <caret line="246" column="26" lean-forward="true" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1577443940005" expanded="true" signature="6518:7060" ph="..." />
           </folding>
         </state>
       </provider>
