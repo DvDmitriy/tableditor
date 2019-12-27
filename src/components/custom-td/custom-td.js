@@ -218,46 +218,31 @@ class SumValues extends Component{
     // com
     // lll
         // getDerivedProps
-      //  componentDidUpdate(prevProps, prevState, snapshot) {
-      //
-      //      let {range, id} = this.props;
-      //      range = range.split(':');
-      //      let sumValue = this.sumValues(range, id);
-      //      if (id === prevState.id &&  this.state.value=== prevState.value) {
-      //          console.log("Sum = " + sumValue);
-      //          this.setState({
-      //              id: id,
-      //              value: sumValue
-      //
-      //          }, () => this.props.setSumValue(sumValue, id));
-      //     }
-      // }
-    updateSumValue = () =>{
-        let {range, id} = this.props;
-        range = range.split(':');
-        console.log("sumValueId = " + id);
-        let sumValue = this.sumValues(range);
-        console.log("Sum = " + sumValue);
-        this.setState({
-            id: id,
-            value: sumValue,
+       componentDidUpdate(prevProps, prevState, snapshot) {
 
-        }, ()=>this.props.setSumValue(sumValue, id));
-    };
+           let {range, id} = this.props;
+           range = range.split(':');
+           let sumValue = this.sumValues(range, id);
+           if (this.props.update) {
+               console.log("Sum = " + sumValue);
+               this.setState({
+                   id: id,
+                   value: sumValue
+
+               }, () => this.props.setSumValue(sumValue, id));
+          }
+      }
+
     render(){
-        const {id, type} = this.props;
-        let {range, value, isLoadded, update} = this.props;
-        if (value === '') {
-            value = 0;
-        }
+
+        let {isLoadded, update} = this.props;
+        console.log("sumUpdate = " + update);
+
         if(!isLoadded) {
             this.props.checkIsLoadded()
         }
         if(update)
-        {
-            console.log(update);
-            this.updateSumValue();
-        }
+       
             //console.log("cellId = " + id);
             //console.log("type = " + type);
             //console.log("Value = " + value);
