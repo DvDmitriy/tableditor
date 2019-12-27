@@ -220,11 +220,11 @@ class SumValues extends Component{
         // getDerivedProps
        componentDidUpdate(prevProps, prevState, snapshot) {
 
-           let {range, id} = this.props;
-           range = range.split(':');
-           let sumValue = this.sumValues(range, id);
            if (this.props.update) {
-               console.log("Sum = " + sumValue);
+              let {range, id} = this.props;
+              range = range.split(':');
+              let sumValue = this.sumValues(range, id);
+              console.log("Sum = " + sumValue);
                this.setState({
                    id: id,
                    value: sumValue
@@ -241,8 +241,8 @@ class SumValues extends Component{
         if(!isLoadded) {
             this.props.checkIsLoadded()
         }
-        if(update)
        
+
             //console.log("cellId = " + id);
             //console.log("type = " + type);
             //console.log("Value = " + value);
