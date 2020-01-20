@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
 import Recaptcha from 'react-recaptcha';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
+import * as ROUTES from '../../constants/routes';
+
 import './authentication-form.css';
+
 
 export default class Form extends Component{
     state = {
-        userName: '',
+        email: '',
         password: '',
-        isAutorized: false,
-        isVarified: false
+        error: null,
     };
     onSubmit = event => {
         /*alert(`${this.state.userName}, добро пожаловать!`);*/
+        const { email, password } = this.state;
         if(this.state.isVarified) {
             this.props.query(this.state);
             console.log('next step');
@@ -74,7 +79,7 @@ export default class Form extends Component{
                           <Recaptcha
                               sitekey="6LerI8IUAAAAAB5GdmMlQRcZ5D3vRpWVv1u1YBaH"
                               render="explicit"
-                              onloadCallback={this.recaptchaLoaded}
+                              onloadCallbac={this.recaptchaLoaded}
                               verifyCallback={this.verifyCallback}
                           />
                           </div>

@@ -1,84 +1,107 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-import './test-table.css';
-import table from './table';
-import CustomTD from '../custom-td';
+import "./test-table.css";
+import defaultTable from "./table";
+import CustomTD from "../custom-td";
 
-export default class Table extends Component{
-
+export default class Table extends Component {
     state = {
-        id: '',
-        cellState: '',
-        type: '',
-        action: '',
-        value: '',
+        table: undefined,
         counter: 0
-
     };
 
-    changeCounter =(counter) =>{
+    componentDidMount() {
+        this.setState({ table: defaultTable });
+    }
+
+    changeCounter = counter => {
         this.setState({
-           counter: counter
+            counter: counter
         });
     };
 
-    render(){
+    setCellValue = (indexRow, indexCol, value) => {
+        const tempTable = this.state.table;
 
-    console.log("render");
+        tempTable.body[indexRow][indexCol].value = value;
 
-        return(
+        this.setState({ table: tempTable });
+    };
+
+    render() {
+        const { table } = this.state;
+        if (!table) {
+            return <div>Loading...</div>;
+        }
+
+        return (
             <div>
-
                 <table>
                     <thead>
-                    {
-                        table.header.map((section, index) =>(
-                            <tr key={index}>
-                                {section.map((row) => (
-                                    <td rowSpan={row.rowSpan}
-                                        colSpan={row.colSpan}
-                                    >{row.rowValue}</td>
-                                ))
-                                }
-                            </tr>
-                        ))
-                    }
+                    {table.header.map((section, index) => (
+                        <tr key={index}>
+                            {section.map(row => (
+                                <td rowSpan={row.rowSpan} colSpan={row.colSpan}>
+                                    {row.rowValue}
+                                </td>
+                            ))}
+                        </tr>
+                    ))}
                     </thead>
                     <tbody>
-                    {
-                        table.body.map((section,index) => (
-                            <tr key={index}>
-                                {
-                                    section.map((cell, cellIndex) => (
-                                            cellIndex < 2
-                                                ?
-                                                <td className={cellIndex === 1 ? '' : 'unusualCell'}>{cell}</td>
-                                                :
-                                               <CustomTD
-                                                   id={cell.id}
-                                                   type={cell.type}
-                                                   color={cell.color}
-                                                   state={cell.cellState}
-                                                   action={cell.action}
-                                                   range={cell.range || null}
-                                                   value={cell.value}
-                                                   counter={this.state.counter}
-                                                   changeCounter={this.changeCounter}
-                                               />
+                    {table.body.map((section, index) => (
+                        <tr key={index}>
+                            {section.map((cell, cellIndex) => {
+                                let value = cell.value;
+                                if (cell.action === "sum") {
+                                    const cellSumIdArray = cell.range
+                                        .split(":")
+                                        .map(e => Number(e));
+                                    let arrayValuesSum = [];
 
-                                        )
-                                    )
+                                    table.body.forEach((row, indexRow) => {
+                                        row.forEach((col, indexCol) => {
+                                            if (cellSumIdArray.includes(col.id)) {
+                                                arrayValuesSum.push(col);
+                                            }
+                                        });
+                                    });
+
+                                    value = arrayValuesSum.reduce(
+                                        (result, val) => (result += Number(val.value)),
+                                        0
+                                    );
+
+                                    if (value !== cell.value)
+                                        this.setCellValue(index, cellIndex, value);
                                 }
-                            </tr>
 
-                        ))
-                    }
+                                return cellIndex < 2 ? (
+                                    <td className={cellIndex === 1 ? "" : "unusualCell"}>
+                                        {cell}
+                                    </td>
+                                ) : (
+                                    <CustomTD
+                                        id={cell.id}
+                                        type={cell.type}
+                                        color={cell.color}
+                                        state={cell.cellState}
+                                        changeCeill={value =>
+                                            this.setCellValue(index, cellIndex, value)
+                                        }
+                                        action={cell.action}
+                                        counter={this.state.counter}
+                                        changeCounter={this.changeCounter}
+                                        range={cell.range || null}
+                                        value={value}
+                                    />
+                                );
+                            })}
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             </div>
         );
     }
 }
-
-
-

@@ -3,7 +3,8 @@ import Form from '../authentication-form';
 import MiddlePage from '../middle-page';
 import Table from '../test-table';
 import MainPage from '../main-page';
-
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './app.css';
 
 
@@ -21,13 +22,22 @@ export default class App extends Component {
       console.log(userName);
       console.log(password);
       console.log(isAutorized);
+      <MiddlePage path={ROUTES.START_PAGE}/>
+<Table />
+
   };*/
+
   render() {
+console.log(ROUTES.START_PAGE);
     return (
 
         <div>
 
-        <Table />
+            <Router>
+               <Route exact path={ROUTES.START_PAGE} component={MiddlePage} />
+               <Route exact path={ROUTES.SIGN_IN} component={Form} />
+               <Route exact path={ROUTES.MIDDLE_PAGE} component={Table} />
+            </Router>
 
         </div>
 
