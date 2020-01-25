@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 import './middle-page.css';
 
 export default class MiddlePage extends Component{
@@ -34,7 +36,9 @@ export default class MiddlePage extends Component{
                     </div>
                     <div className="container padding-lg">
                         <div className="row justify-content-center">
+                            <Link to={ROUTES.SIGN_IN}>
                              <button type="button" className="btn btn-success">Новый отчёт</button>
+                            </Link>
                              <button type="button" className="btn btn-danger">Открыть отчёт</button>
                         </div>
                     </div>

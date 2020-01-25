@@ -2,37 +2,45 @@ import React, {Component} from 'react';
 import Recaptcha from 'react-recaptcha';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import { withFirebase } from '../firebase';
 import * as ROUTES from '../../constants/routes';
 
 import './authentication-form.css';
 
 
-export default class Form extends Component{
+class FormBase extends Component{
     state = {
         email: '',
         password: '',
         error: null,
+        isVarified: false,
     };
     onSubmit = event => {
         /*alert(`${this.state.userName}, добро пожаловать!`);*/
-        const { email, password } = this.state;
         if(this.state.isVarified) {
             this.props.query(this.state);
-            console.log('next step');
-            event.preventDefault();
+            const { email, password } = this.state;
+
+            this.props.firebase
+                .doSignInWithEmailAndPassword(email, password)
+                .then(() => {
+                    this.props.history.push(ROUTES.MIDDLE_PAGE);
+                })
+                .catch(error => {
+                    this.setState({
+                        error: error
+                    });
+                });
+           // event.preventDefault();
         }
         else{
             alert(`Подтвердите, что Вы не робот!`);
         }
     };
-    onChangePassword = event => {
+
+    onChange = event => {
         this.setState({
-            password: event.target.value
-        });
-    };
-    onChangeUserName = event => {
-        this.setState({
-            userName: event.target.value.toLowerCase()
+           [event.target.name]: event.target.value,
         });
     };
    recaptchaLoaded = () => {
@@ -49,6 +57,9 @@ export default class Form extends Component{
     };
 
     render(){
+        const { email, password, error } = this.state;
+        console.log(email, password, error);
+        const isInvalid = password === '' || email === '';
       return(
        <div className="container">
           <div className="row">
@@ -57,21 +68,21 @@ export default class Form extends Component{
                         onSubmit={this.onSubmit}>
                       <span className="heading">АВТОРИЗАЦИЯ</span>
                       <div className="form-group">
-                          <input type="text"
+                          <input type="email"
                                  className="form-control"
-                                 name="userName"
-                                 placeholder="Пользователь"
-                                 value={this.state.userName}
-                                 onChange={this.onChangeUserName} />
-                          <i className="fa fa-user" />
+                                 name="email"
+                                 placeholder="E-mail"
+                                 value={email}
+                                 onChange={this.onChange} />
+                          <i className="fa fa-user"></i>
                       </div>
                       <div className="form-group help">
                           <input type="password"
                                  className="form-control"
                                  name="password"
                                  placeholder="Пароль"
-                                 value={this.state.password}
-                                 onChange={this.onChangePassword} />
+                                 value={password}
+                                 onChange={this.onChange} />
                           <i className="fa fa-lock" />
                       </div>
                       <div className="form-group">
@@ -85,8 +96,12 @@ export default class Form extends Component{
                           </div>
                       </div>
                       <div className="form-group">
-                            <button type="submit" className="btn btn-default">ВХОД</button>
+                            <button type="submit"
+                                    className="btn btn-default"
+                                    disabled={isInvalid}>ВХОД
+                            </button>
                       </div>
+                      {error && <p>{error.message}</p>}
                   </form>
               </div>
           </div>
@@ -94,3 +109,9 @@ export default class Form extends Component{
       );
     }
    }
+  const Form = compose(
+       withRouter,
+       withFirebase,
+   )(FormBase);
+
+  export default Form;
