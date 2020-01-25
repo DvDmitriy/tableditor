@@ -24,6 +24,11 @@ class FormBase extends Component{
             this.props.firebase
                 .doSignInWithEmailAndPassword(email, password)
                 .then(() => {
+                    this.setState({
+                        email: email,
+                        password: password,
+                    });
+                    console.log(email + password);
                     this.props.history.push(ROUTES.MIDDLE_PAGE);
                 })
                 .catch(error => {
