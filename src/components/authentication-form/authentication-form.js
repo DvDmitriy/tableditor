@@ -17,8 +17,9 @@ class FormBase extends Component{
     };
     onSubmit = event => {
         /*alert(`${this.state.userName}, добро пожаловать!`);*/
+        event.preventDefault();
         if(this.state.isVarified) {
-            this.props.query(this.state);
+
             const { email, password } = this.state;
 
             this.props.firebase
@@ -36,7 +37,7 @@ class FormBase extends Component{
                         error: error
                     });
                 });
-           // event.preventDefault();
+           //
         }
         else{
             alert(`Подтвердите, что Вы не робот!`);

@@ -1,8 +1,9 @@
 import React from "react";
 
-export default {
-
+export default
+{
     "header":[
+	    ["Таблица 13","ЧИСЛЕННОСТЬ РАБОТНИКОВ ВУЗА (ОРГАНИЗАЦИИ)В 2019 ГОДУ"],
         [
             {
                 "rowSpan": 2,

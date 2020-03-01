@@ -2,14 +2,17 @@ import React, {Component} from 'react';
 import Form from '../authentication-form';
 import MiddlePage from '../middle-page';
 import Table from '../test-table';
+import Navigation from '../navigation';
+import { AuthUserContext } from '../session';
 import MainPage from '../main-page';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import './app.css';
+import {withFirebase} from "../firebase";
+import { withAuthentication } from '../session';
 
 
-
-export default class App extends Component {
+class App extends Component {
 
 
   /*checkAutorized = ({userName, password, isAutorized}) => {
@@ -27,19 +30,36 @@ export default class App extends Component {
 <Table />
 
   };*/
+    state = {
+        authUser: null,
+    };
+    componentDidMount() {
+        this.listener = this.props.firebase.auth.onAuthStateChanged(
+            authUser => {
+                authUser
+                    ? this.setState({ authUser })
+                    : this.setState({ authUser: null });
+            },
+        );
+    }
 
+    componentWillUnmount() {
+        this.listener();
+    }
   render() {
 console.log(ROUTES.START_PAGE);
     return (
 
         <div>
-
+          <AuthUserContext.Provider value={this.state.authUser}>
             <Router>
+               <Navigation authUser={this.state.authUser} />
                <Route exact path={ROUTES.START_PAGE} component={MiddlePage} />
                <Route exact path={ROUTES.SIGN_IN} component={Form} />
                <Route exact path={ROUTES.MIDDLE_PAGE} component={Table} />
-            </Router>
 
+            </Router>
+          </AuthUserContext.Provider>
         </div>
 
 
@@ -61,3 +81,4 @@ console.log(ROUTES.START_PAGE);
   }
 }
 
+export default withFirebase(App);

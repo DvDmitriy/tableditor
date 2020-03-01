@@ -5,8 +5,10 @@ import './middle-page.css';
 
 export default class MiddlePage extends Component{
     render(){
+
         return(
             <div>
+
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-lg-12 col-md-10 col-sm-6">

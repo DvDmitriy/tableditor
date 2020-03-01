@@ -1,14 +1,31 @@
-import React, { Component } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default class Navigation extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Navigation</h1>
-            </div>
-        );
-    }
-}
+import SignOutButton from '../sign-out';
+import * as ROUTES from '../../constants/routes';
+
+const Navigation = ({ authUser }) => (
+    <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
+);
+
+const NavigationAuth = () => (
+    <ul>
+        <li>
+            <Link to={ROUTES.MIDDLE_PAGE}>Choose table</Link>
+        </li>
+        <li>
+            <SignOutButton />
+        </li>
+    </ul>
+);
 
 
+const NavigationNonAuth = () => (
+    <ul>
+        <li>
+            <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+        </li>
+    </ul>
+);
 
+export default Navigation;

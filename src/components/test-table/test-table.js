@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import "./test-table.css";
 import defaultTable from "./table";
 import CustomTD from "../custom-td";
+import TableComponent from "./table-component";
+import {FirebaseContext} from "../firebase";
 
 export default class Table extends Component {
     state = {
@@ -27,15 +29,24 @@ export default class Table extends Component {
 
         this.setState({ table: tempTable });
     };
-
+    getTable = () =>{
+    this.props.firebase
+      .getResource(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
+      .then((body) => {
+         console.log(body);
+      })
+    };
     render() {
         const { table } = this.state;
         if (!table) {
             return <div>Loading...</div>;
         }
-
+        this.getTable();
         return (
             <div>
+
+
+
                 <table>
                     <thead>
                     {table.header.map((section, index) => (
