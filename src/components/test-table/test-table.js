@@ -29,23 +29,25 @@ export default class Table extends Component {
 
         this.setState({ table: tempTable });
     };
-    getTable = () =>{
-    this.props.firebase
-      .getResource(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
-      .then((body) => {
-         console.log(body);
-      })
-    };
+    // getTable = () =>{
+    // this.props.firebase
+    //   .getResource(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
+    //   .then((body) => {
+    //      console.log(body);
+    //   })
+    // };
+
     render() {
         const { table } = this.state;
         if (!table) {
             return <div>Loading...</div>;
         }
-        this.getTable();
+
         return (
+
             <div>
-
-
+                <FirebaseContext.Consumer >
+                    {firebase => {
 
                 <table>
                     <thead>
@@ -112,7 +114,11 @@ export default class Table extends Component {
                     ))}
                     </tbody>
                 </table>
+                    }}
+                </FirebaseContext.Consumer>
             </div>
+
         );
+
     }
 }

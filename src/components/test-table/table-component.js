@@ -4,12 +4,9 @@ import  { FirebaseContext } from '../firebase';
 
 const TableComponent = () => (
     <FirebaseContext.Consumer>
-        {firebase =>
-            this.getResource(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
-                .then((body)=>{
-                    console.log(body);
-                })
-        }
+        {firebase => {
+             return <div>I've access to Firebase and render something</div>;
+        }}
     </FirebaseContext.Consumer>
 );
 
