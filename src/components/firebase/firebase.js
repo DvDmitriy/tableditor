@@ -19,15 +19,15 @@ export default class Firebase{
     doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
     doSignOut = () => this.auth.signOut();
-    async getResource(url){
-        const res = await fetch(url);
+    getResource = (url) => {
+        const res = fetch(url);
         if(!res.ok) {
             throw new Error(`Could not fetch ${url}` +
                 `, received ${res.status}`)
         }
-        return await res.json();
+        return res.json();
 
 
-    }
+    };
 
 }

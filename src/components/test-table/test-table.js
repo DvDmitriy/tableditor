@@ -46,9 +46,7 @@ export default class Table extends Component {
         return (
 
             <div>
-                <FirebaseContext.Consumer >
-                    {firebase => {
-
+            <TableComponent />
                 <table>
                     <thead>
                     {table.header.map((section, index) => (
@@ -114,8 +112,7 @@ export default class Table extends Component {
                     ))}
                     </tbody>
                 </table>
-                    }}
-                </FirebaseContext.Consumer>
+
             </div>
 
         );
