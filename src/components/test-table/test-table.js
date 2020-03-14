@@ -9,11 +9,22 @@ import {FirebaseContext} from "../firebase";
 export default class Table extends Component {
     state = {
         table: undefined,
-        counter: 0
+        counter: 0,
+        loading: false,
     };
 
     componentDidMount() {
-        this.setState({ table: defaultTable });
+        this.setState(
+            {
+                table: defaultTable,
+                loading: true,
+            });
+        // this.props.firebase.table(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
+        //     .on('value', snapshot => {
+        //
+        //     this.setState({ loading: false });
+        //     console.log(table);
+        // });
     }
 
     changeCounter = counter => {
@@ -37,6 +48,9 @@ export default class Table extends Component {
     //   })
     // };
 
+    // componentWillUnmount() {
+    //     this.props.firebase.table(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`).off();
+    // }
     render() {
         const { table } = this.state;
         if (!table) {

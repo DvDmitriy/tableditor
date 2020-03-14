@@ -20,6 +20,7 @@ export default class Firebase{
         this.auth.signInWithEmailAndPassword(email, password);
     doSignOut = () => this.auth.signOut();
     getResource = (url) => {
+        //let cors = 'https://cors-anywhere.herokuapp.com/';
         const res = fetch(url);
         if(!res.ok) {
             throw new Error(`Could not fetch ${url}` +
@@ -29,5 +30,6 @@ export default class Firebase{
 
 
     };
+    table = url => this.db.ref(url);
 
 }

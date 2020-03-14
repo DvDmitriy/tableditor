@@ -1,17 +1,19 @@
 import React from "react";
-import  { FirebaseContext } from '../firebase';
+import {FirebaseContext, withFirebase} from '../firebase';
 
 
 const TableComponent = () => (
     <FirebaseContext.Consumer>
         {firebase => {
-             .getResource(`https://tableditor-47a70.firebaseio.com/departments/university/tables/first_table`)
+             firebase.getResource(
+                 `https://console.firebase.google.com/project/tableditor-47a70/database/data/departments/university/tables/first_table`)
                 .then((body) => {
                     console.log(body);
                 });
 
         }}
     </FirebaseContext.Consumer>
+
 );
 
-export default TableComponent;
+export default withFirebase(TableComponent);
