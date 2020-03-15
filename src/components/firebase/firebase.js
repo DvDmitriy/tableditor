@@ -19,9 +19,12 @@ export default class Firebase{
     doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
     doSignOut = () => this.auth.signOut();
-    getResource = (url) => {
+    getResource = async(url) => {
         //let cors = 'https://cors-anywhere.herokuapp.com/';
-        const res = fetch(url);
+        const res = await fetch(url, {
+            mode: 'no-cors'
+        })
+        console.log(res)
         if(!res.ok) {
             throw new Error(`Could not fetch ${url}` +
                 `, received ${res.status}`)
