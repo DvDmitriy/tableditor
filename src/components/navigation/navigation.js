@@ -9,14 +9,22 @@ const Navigation = ({ authUser }) => (
 );
 
 const NavigationAuth = () => (
-    <ul>
-        <li>
-            <Link to={ROUTES.MIDDLE_PAGE}>Choose table</Link>
-        </li>
-        <li>
-            <SignOutButton />
-        </li>
-    </ul>
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark nav-fill">
+        <span className="navbar-brand">TablEditoR</span>
+        <span className="navbar-brand">КСИТ</span>
+        <span className="navbar-brand">Дворников Дмитрий Юрьевич</span>
+        <div className="collapse navbar-collapse justify-content-end">
+            <form className="form-inline my-2 my-lg-0">
+                <SignOutButton />
+            </form>
+        </div>
+
+
+
+      </nav>
+    </div>
+
 );
 
 

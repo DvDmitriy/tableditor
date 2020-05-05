@@ -67,6 +67,7 @@ class FormBase extends Component{
         console.log(email, password, error);
         const isInvalid = password === '' || email === '';
       return(
+      <div className="body">
        <div className="container">
           <div className="row">
               <div className="col-md-offset-3 col-md-6">
@@ -112,6 +113,7 @@ class FormBase extends Component{
               </div>
           </div>
       </div>
+     </div>
       );
     }
    }

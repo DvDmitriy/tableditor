@@ -53,9 +53,10 @@ console.log(ROUTES.START_PAGE);
         <div>
           <AuthUserContext.Provider value={this.state.authUser}>
             <Router>
-               <Navigation authUser={this.state.authUser} />
+
                <Route exact path={ROUTES.START_PAGE} component={MiddlePage} />
                <Route exact path={ROUTES.SIGN_IN} component={Form} />
+               <Navigation authUser={this.state.authUser} />
                <Route exact path={ROUTES.MIDDLE_PAGE} component={Table} />
 
             </Router>

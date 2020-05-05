@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import './middle-page.css';
+import picture from './bg-masthead.jpg';
 
 export default class MiddlePage extends Component{
     render(){
@@ -9,42 +10,23 @@ export default class MiddlePage extends Component{
         return(
             <div>
 
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-lg-12 col-md-10 col-sm-6">
-                        <p className="font">Welcome to tablEditor, <br />user</p>
-                    </div>
-                </div>
-            </div>
-            <div className="empty">
-            </div>
-                <div className="container drop">
-                    <div className="row justify-content-center">
-                        <div className="btn-group dropright">
-                            <div className="btn-group dropright">
-                                <button type="button" className="btn btn-secondary dropdown-toggle"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Ознакомиться с документацией
-                                </button>
-                                <div className="dropdown-menu" x-placement="right-start">
-                                    <a className="dropdown-item" href="#">Action</a>
-                                    <a className="dropdown-item" href="#">Another action</a>
-                                    <a className="dropdown-item" href="#">Something else here</a>
-                                    <div className="dropdown-divider"></div>
-                                    <a className="dropdown-item" href="#">Separated link</a>
-                                </div>
+                <header className="masthead">
+                    <div className="container h-100">
+                        <div className="row h-100 align-items-center justify-content-center text-center">
+                            <div className="col-lg-10 align-self-end">
+                                <h1 className="text-uppercase text-white font-weight-bold">Welcome to TablEditoR</h1>
+                                <hr className="divider my-4"/>
+                            </div>
+                            <div className="col-lg-8 align-self-baseline">
+                                <p className="text-white-75 font-weight-light mb-5">Табличный редактор</p>
+                                <Link to={ROUTES.SIGN_IN}>
+                                 <button className="btn btn-primary btn-xl js-scroll-trigger">Начать</button>
+                                </Link>
                             </div>
                         </div>
                     </div>
-                    <div className="container padding-lg">
-                        <div className="row justify-content-center">
-                            <Link to={ROUTES.SIGN_IN}>
-                             <button type="button" className="btn btn-success">Новый отчёт</button>
-                            </Link>
-                             <button type="button" className="btn btn-danger">Открыть отчёт</button>
-                        </div>
-                    </div>
-                </div>
+                </header>
+
             </div>
         );
      }

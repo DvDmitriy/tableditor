@@ -1,5 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/database';
 
 const FirebaseConfig = {
     apiKey: "AIzaSyDxcU_CzIyQl98PDwD9GW9k6CQGLmxopD4",
@@ -15,8 +16,9 @@ export default class Firebase{
     constructor(){
         app.initializeApp(FirebaseConfig);
         this.auth = app.auth();
+        this.db = app.database();
    }
-    doSignInWithEmailAndPassword = (email, password) =>
+   doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
     doSignOut = () => this.auth.signOut();
     getResource = (url) => {
@@ -30,6 +32,6 @@ export default class Firebase{
 
 
     };
-    table = url => this.db.ref(url);
+    getTable = () => this.db.ref().child('university/tables');
 
 }

@@ -5,6 +5,9 @@ import defaultTable from "./table";
 import CustomTD from "../custom-td";
 import TableComponent from "./table-component";
 import {FirebaseContext} from "../firebase";
+import Firebase from "../firebase";
+import { withFirebase } from '../firebase';
+import * as ROUTES from "../../constants/routes";
 
 export default class Table extends Component {
     state = {
@@ -56,11 +59,15 @@ export default class Table extends Component {
         if (!table) {
             return <div>Loading...</div>;
         }
-
+        this.props.firebase
+            .getTable()
+            .on('value', snapshot => {
+                console.log(snapshot.val());
+            });
         return (
 
             <div>
-            <TableComponent />
+
                 <table>
                     <thead>
                     {table.header.map((section, index) => (
