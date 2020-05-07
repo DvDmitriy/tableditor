@@ -8,13 +8,20 @@ const Navigation = ({ authUser }) => (
     <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
 );
 
+const signOutStyle = {
+    position: 'absolute',
+    right: '10px'
+}
+
 const NavigationAuth = () => (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark nav-fill">
+          <div>
         <span className="navbar-brand">TablEditoR</span>
         <span className="navbar-brand">КСИТ</span>
         <span className="navbar-brand">Дворников Дмитрий Юрьевич</span>
-        <div className="collapse navbar-collapse justify-content-end">
+        </div>
+        <div className="collapse navbar-collapse justify-content-end" style={signOutStyle}>
             <form className="form-inline my-2 my-lg-0">
                 <SignOutButton />
             </form>

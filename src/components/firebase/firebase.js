@@ -35,6 +35,6 @@ export default class Firebase{
 
 
     };
-    getTable = () => this.db.ref().child('university/tables');
+    getTable = () => this.db.ref().child('university/departments/tables/first_table');
 
 }

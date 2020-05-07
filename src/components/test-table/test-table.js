@@ -9,7 +9,7 @@ import Firebase from "../firebase";
 import { withFirebase } from '../firebase';
 import * as ROUTES from "../../constants/routes";
 
-export default class Table extends Component {
+ class Table extends Component {
     state = {
         table: undefined,
         counter: 0,
@@ -62,7 +62,7 @@ export default class Table extends Component {
         this.props.firebase
             .getTable()
             .on('value', snapshot => {
-                console.log(snapshot.val());
+                console.log(snapshot);
             });
         return (
 
@@ -140,3 +140,5 @@ export default class Table extends Component {
 
     }
 }
+
+export default withFirebase(Table)
