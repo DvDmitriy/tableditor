@@ -1,0 +1,371 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 14px/1 'Roboto', sans-serif;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0; 
+  width: 100%;
+  background-color: #000; 
+  padding-top: 38px;
+  padding-bottom: 52px;
+  opacity: 0.6;
+  z-index: 99;
+}
+
+.container {
+  max-width: 2084px;
+  padding: 0 15px;
+  margin: auto;  
+}
+
+.middle-part {
+   background: url(../img/junglebook-copy2.png) no-repeat;
+   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+   /* opacity: 0.95; */
+   height: 1100px;
+   padding-top: 148px;
+   z-index: 0;
+}
+
+.search {
+  display: inline-block;
+}
+
+.header-nav {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.57;
+  letter-spacing: 1.12px;
+  color: #fff;
+  margin-left: auto;
+}
+
+.sign-in {
+  margin-left: 43px;
+  color: #fff;
+}
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.57;
+  letter-spacing: 1.12px;  
+} 
+
+.btn-default {
+  width: 200px;
+  height: 60px;
+  border-radius: 6px;
+  color: #fff;
+} 
+
+.btn-sign-up {
+  position: relative;
+  top: -8px;
+  background-color: #0aaee4;
+  margin-left: 60px;
+ 
+}
+
+.btn-action {
+  border: 2px solid #fff;
+}
+
+.btn-action:hover {
+  background-color: #0aaee4;
+}
+
+.md-part-desc {
+  margin-top: 566px;
+}
+
+.md-part-desc .movie-desc {
+  display: inline-block;
+  padding-top: 142px;
+}
+
+.md-part-desc .movie-desc .movie-title {
+  font-size: 60px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 27px;
+  line-height: 0.73;
+  letter-spacing: 2.4px;
+}
+
+.movie-desc .movie-genre {
+  justify-content: space-between;
+  display: flex;
+  font-size: 28px;
+  line-height: 1.57;
+  letter-spacing: 0.96px;
+  color: #fff;
+}
+
+/* .md-part-desc .movie-desc .movie-genre {
+  justify-content: space-between;
+  display: flex;
+  font-size: 24px;
+  line-height: 1.83;
+  letter-spacing: 0.96px;
+  color: #fff;
+  margin-bottom: 55px;
+} */
+
+.md-part-desc .movie-info {
+  font-size: 24px;
+  color: #fff;
+}
+
+.m-rating > .m-star + .m-star,  .m-mark{
+  margin-left: 15px;
+}
+
+.m-mark {
+  width: 60px;
+  height: 36px;
+  border-radius: 6px;
+  border: 2px solid #0aaee4;
+  font-size: 24px;
+  color: #000;
+}
+
+.md-part-desc .movie-info .m-actions {
+  margin-left: auto;
+}
+
+.m-actions-item + .m-actions-item {
+  margin-left: 42px;
+}
+
+.main-part {
+  background-color: #f5f6f6;
+  margin-bottom: 288px;
+}
+
+.main-part .visible-features {
+  padding-top: 77px;
+  border-bottom: 1px solid rgba(36, 43, 45, 0.1);
+  margin-bottom: 36px;
+}
+
+.main-part .visible-features .sort-list {
+  margin-right: auto;
+}
+
+.main-part .visible-features .kind-of-view {
+  margin-left: auto;
+}
+
+.main-part .visible-features .sort-list > .sort-list-item {
+  font-size: 28px;
+  line-height: 1.57;
+  letter-spacing: 1.12px;
+  color: #0aaee4;
+  padding-bottom: 13px;
+}
+
+.main-part .visible-features .sort-list > .sort-list-item:hover {
+  font-weight: bold;
+  border-bottom: 3px solid #0aaee4;
+}
+
+.sort-list-item + .sort-list-item,  .kind-of-view-item  + .kind-of-view-item  {
+  margin-left: 16px;
+}
+
+.sort-list-item, .kind-of-view-item  
+{
+  display: inline-block;
+}
+
+.main-part .row {
+  margin: 0 -15px;
+}
+
+.main-part .row .col-3 {
+  width: 25%;
+  padding: 0 15px;
+  margin-bottom: 40px;
+}
+
+.main-part .col-3 + .main-part .col-3 {
+  margin-left: 40px;
+}
+
+.main-part .col-3 .movie-card-item-test {
+   position: relative;
+} 
+
+.main-part .col-3 .movie-card-item-chosen {
+  display: none;
+  /* background-color: #0b0b0b; 
+  opacity: 0.84; */
+} 
+
+/* Exchange content start */
+/* .main-part .col-3:hover .movie-card-item-test {
+  display: none;
+}
+
+.main-part .col-3:hover .movie-card-item-chosen {
+  display: block;
+  background-color: #0b0b0b;
+  
+} */
+
+/* .main-part .movie-card-item-chosen {
+  display: block;
+  background-color: #0b0b0b;
+  opacity: 0.84;
+} */
+/* Exchange content end */
+
+.movie-card-item .movie-card-image {
+  display: block;
+}
+
+.movie-card-info {
+  background-color: #fff;
+  padding: 48px 41px;
+}
+
+.movie-card-info .movie-card-desc {
+  display: inline-block;
+  border-radius: 0 0 5px 5px;
+  margin-right: auto;
+}
+
+.movie-card-desc .movie-card-title {
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.57;
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  color: #242b2d;
+}
+
+.movie-card-desc .movie-card-genre {
+  justify-content: space-between;
+  display: flex;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 0.88px;
+  color: #47c3f0;
+}
+
+.movie-card-desc .movie-card-mark {
+  margin-left: auto;
+}
+
+.footer {  
+  background-color: wheat;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.footer .footer-content {
+  padding-top: 76px;
+}
+
+.footer .footer-menu {
+  font-size: 24px;
+  line-height: 1.83;
+  letter-spacing: 0.96px;
+  color: #242b2d;
+  opacity: 0.4;
+}
+
+.footer-menu-item + .footer-menu-item{
+  margin-left: 10px;
+}
+
+.footer .footer-title {
+  font-size: 50px;
+  line-height: 1.2858;
+  color: #0aaee4;
+  margin-bottom: 76px;
+}
+
+.footer-title .footer-tf {
+  font-weight: 900;
+  letter-spacing: 1.37px;
+}
+
+.footer-title .footer-ts {
+  font-weight: 100;
+  letter-spacing: 1.37px;
+  text-transform: uppercase;
+}
+
+.footer .footer-social-icons .footer-icon {
+  display: inline-block;
+}
+
+.footer-icon + .footer-icon {
+  margin-left: 24px;
+}
+
+.footer .footer-copyright {
+  padding-bottom: 50px;
+}
+
+.footer .footer-copyright > span {
+  display: block;
+  font-size: 24px;
+  line-height: 1.83;
+  color: #242b2d;
+  opacity: 0.4;
+}
